@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+
+<!--make add-new function located in the center of the page-->
+<!--container wrap all the elements -> row div wrap the inputbox-->
+<!--change the style  margin: 0 auto width:30%-->
+<!--each item in the form wrapped in formgroup-->
+<div class="container">
+    <div class="row">
+        <h1 style="text-align:center">Create a new comment to <%= campground.name %></h1>
+        <div style="width: 30%;margin: 25px auto;">
+            <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+                <div class="form-group">
+                    <!--make all the inputs as attributes of comment, self-organized-->
+                <input class="form-control" type="text" name="comment[text]" placeholder="text">
+                </div>
+                <!--btn-block to make the button occupy the whole line-->
+                <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <a href="/campgrounds">Go back!</a>
+</div>
+
+<% include ../partials/footer %>

@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+
+<!--make add-new function located in the center of the page-->
+<!--container wrap all the elements -> row div wrap the inputbox-->
+<!--change the style  margin: 0 auto width:30%-->
+<!--each item in the form wrapped in formgroup-->
+<div class="container">
+    <div class="row">
+        <h1 style="text-align:center">Create a new campground!</h1>
+        <div style="width: 30%;margin: 25px auto;">
+            <form action="/campgrounds" method="POST">
+                <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name="price" placeholder="price" min="0.00" step="0.1">
+                </div>
+                <div class="form-group">
+                <input class="form-control"  type="text" name="image" placeholder="image url">
+                </div>
+                <div class="form-group">
+                <input class="form-control"  type="text" name="description" placeholder="description">
+                </div>
+                <!--btn-block to make the button occupy the whole line-->
+                <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <a href="/campgrounds">Go back!</a>
+</div>
+
+<% include ../partials/footer %>

@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+    <!-- use styling from bootstrap -->
+    <header class="jumbotron">
+    <!-- wrap headlines with container to more them more aligned -->
+    <div class="container">
+        <h1>Welcome to Yelpcamp!</h1>
+        <p>View our picked campgrounds!</p>
+        <p><a class="btn btn-primary btn-lg" href="/campgrounds/new">Add a new campground!</a></p>
+    </div>
+    </header>
+    
+    <!--temporary bootstrap styling, adjusting different height of pictures-->
+    <div class="row text-center" style="display:flex;flex-wrap:wrap;">
+    <% campgrounds.forEach(function(camp){ %>
+        <!--a line has 12 units, 12 doesn't need to include. md refers to screen size-->
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+            <img src="<%= camp.image %>">
+            <div class="caption">
+                <h4><%= camp.name %></h4>
+            </div>
+            <p>
+                <a href="/campgrounds/<%=camp._id%>" class="btn btn-primary">More Info</a>
+            </p>
+            </div>
+        </div>
+    <% }); %>
+        
+    </div>
+</div>
+
+<% include ../partials/footer %>
