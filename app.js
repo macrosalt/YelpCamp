@@ -15,10 +15,11 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
 
-//local db
+//hide the db of server, set environment variables
+//when you use local db, it's fine to just explicitly to claim it
 // mongoose.connect("mongodb://localhost/yelp_camp");
-//server db
-mongoose.connect("mongodb://Yan:liyan123@ds119113.mlab.com:19113/yelpcampdb");
+mongoose.connect(process.env.DATABASEURL);
+
 
 //seedDB();
 
