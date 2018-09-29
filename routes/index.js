@@ -53,7 +53,9 @@ router.get("/logout",function(req, res) {
 //retrieve info about req.body.username, req.body.password
 router.post("/login",passport.authenticate("local",{
     successRedirect: "/campgrounds",
-    failureRedirect: "/login"
+    failureRedirect: "/login",
+    failureFlash: true,
+    successFlash: "Welcome back to YelpCamp!"
 }),function(req,res){
 });
 
